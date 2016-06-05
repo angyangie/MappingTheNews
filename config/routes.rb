@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
- resources :map
+ resources :maps
+ resources :countries
+
+ get '/countries/json', to: "map#countries"
+
 end

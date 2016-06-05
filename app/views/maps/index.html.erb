@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapping The News</title>
+  
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.js'></script>
+
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.css' rel='stylesheet' />
+
+  <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet'>
+
+</head>
+<body>
+
+<div id='map'></div>
+<div id='current-country'></div>
+
+<script>
+
+var map;
+
+//Load map 
+var initMap = function() {
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYW5neWFuZ2llIiwiYSI6ImNpb3pxdzVlNzAyNTR0aG00Y2thcmM2NzcifQ.tZYMnHPi7VJu077p4EyNfA'
+
+        map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/angyangie/ciozr0p53000lbvm60fu356jf' 
+      });
+
+//Country divisions layer 
+var createCountryDivisions = function() {
+   $.ajax({
+      dataType: "JSON",
+      url: '/countries/json'
+    }).done(function(response){
+     var country_layer = JSON.parse(response)
+     map.addSource("countries", country_layer)
+     map.addLayer({
+          "id": "countries",
+          "type": "line",
+          "source": "countries",
+          "interactive": true,
+            "layout": {
+                "visibility": "visible"
+            }
+        })
+    })
+  }
+
+  map.on('click', function(e){
+    var country = map.queryRenderedFeatures(e.point, { layers: ['countries']});
+  map.getCanvas().style.cursor = (country.length) ? 'pointer' : '';
+   
+   var state = map.queryRenderedFeatures(e.point, { layers: ['state-label-sm'] })
+
+   var countryLabel = country[0].properties.name
+   var stateLabel = state[0].properties.name 
+
+  $('#current-country').html('<strong>Country: </strong><thisisatag>' + countryLabel + '</thisisatag>')
+    map.getCanvas().style.cursor = (country.length) ? 'pointer' : '';
+  })
+
+
+
+  //Loads Country division layer 
+  map.on("load", function(){
+    createCountryDivisions();
+  })
+
+}
+
+$(document).ready(function() {
+  initMap();
+})
+
+  </script>
+
+</body>
+</html>
+
+
+  

@@ -4,3 +4,13 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+task :seed_articles => :environment do 
+  ArticleSeeder.new.get_articles
+end
+
+# task :clean_db do
+# end
+
+
+

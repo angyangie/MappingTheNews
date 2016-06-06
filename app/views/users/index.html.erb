@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> <script src="js/script.js"></script></title>
+</head>
+<body>
+
+<h1>Welcome User!</h1>
+
+ <p >Already a member? <strong><%= link_to "Sign In", login_path %></strong></p>
+
+    <font color="red"><% if flash[:errors] %>
+    <h5><%= flash[:message] %>
+      <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+      <% end %>
+  <% end %>
+    <br>
+
+  <%= form_for @user, url: '/signup' do |f| %>
+  
+    <div class="form-group">
+      <%= f.text_field :first_name, class: 'form-control', placeholder: 'First Name' %>
+    </div>
+
+     <div class="form-group">
+      <%= f.text_field :last_name, class: 'form-control', placeholder: 'Last Name' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.email_field :email, class: 'form-control', placeholder: 'Enter your email' %>
+    </div>
+     <div class="form-group">
+     <%= f.password_field :password, class: 'form-control', placeholder: "Password"%>
+    </div>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Retype your password"%><br>
+    </div>
+
+    <%= f.submit "Sign up", class: "btn btn-primary btn-block" %>
+
+      <% end %>
+
+
+</body>
+</html>
+

@@ -1,0 +1,10 @@
+
+<h1>Get to know your world. Today.</h1>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;Browse the list below for today's top articles around the world:</h3>
+
+<ul class="list-group">
+<% @articles.each do |article| %>
+<li class="list-group-item"><h5>(<%= article.country_name %>). <%= article.name %>. <%= link_to "Link", article.url, :target => "_blank"  %>.</h5></li>
+<% end %>
+</ul>
+

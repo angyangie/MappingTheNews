@@ -15,8 +15,8 @@
 </head>
 <body>
 
-<div id='map'></div>
-<div id='current-country'></div>
+<div id='map' class= '.col-md-8'></div>
+<div id='current-country' class='.col-md-4'></div>
 
 <script>
 
@@ -28,51 +28,56 @@ var initMap = function() {
 
         map = new mapboxgl.Map({
           container: 'map',
-          style: 'mapbox://styles/angyangie/ciozr0p53000lbvm60fu356jf' 
+          style: 'mapbox://styles/angyangie/ciozr0p53000lbvm60fu356jf'
       });
 
 //Country divisions layer 
-var createCountryDivisions = function() {
-   $.ajax({
-      dataType: "JSON",
-      url: '/countries/json'
-    }).done(function(response){
-     var country_layer = JSON.parse(response)
-     map.addSource("countries", country_layer)
-     map.addLayer({
-          "id": "countries",
-          "type": "line",
-          "source": "countries",
-          "interactive": true,
-            "layout": {
-                "visibility": "visible"
-            }
-        })
-    })
-  }
+// var createCountryDivisions = function() {
+//    $.ajax({
+//       dataType: "JSON",
+//       url: '/countries/json'
+//     }).done(function(response){
+//      var country_layer = JSON.parse(response)
+//      map.addSource("countries", country_layer)
+//      map.addLayer({
+//           "id": "countries",
+//           "type": "fill",
+//           "source": "countries",
+//           "interactive": true,
+//             "layout": {
+//                 "visibility": "visible"
+//             }
+//         })
+//     })
+//   }
 
   map.on('click', function(e){
-    var country = map.queryRenderedFeatures(e.point, { layers: ['countries']});
-  map.getCanvas().style.cursor = (country.length) ? 'pointer' : '';
+    var country_features = map.queryRenderedFeatures(e.point, {layers: ['countries (1)']});
+
+    map.getCanvas().style.cursor = (country_features.length) ? 'pointer' : '';
    
-   var state = map.queryRenderedFeatures(e.point, { layers: ['state-label-sm'] })
+    // var state = map.queryRenderedFeatures(e.point, { layers: ['state-label-lg'] })
 
-   var countryLabel = country[0].properties.name
-   var stateLabel = state[0].properties.name 
+    var countries = []
 
-  $('#current-country').html('<strong>Country: </strong><thisisatag>' + countryLabel + '</thisisatag>')
-    map.getCanvas().style.cursor = (country.length) ? 'pointer' : '';
+    var country_labels = country_features.forEach(function(country){
+      countries.push(country.properties.name)
+    })
+    // var stateLabel = state.properties.name
+
+    console.log(countries[0])
+
+    $('#current-country').html('<strong>Country: </strong><thisisatag>' + countries[0] + '</thisisatag>')
+    map.getCanvas().style.cursor = (country_features.length) ? 'pointer' : '';
   })
-
-
 
   //Loads Country division layer 
-  map.on("load", function(){
-    createCountryDivisions();
-  })
+  // map.on("load", function(){
+  //   createCountryDivisions();
+  // })
+
 
 }
-
 $(document).ready(function() {
   initMap();
 })

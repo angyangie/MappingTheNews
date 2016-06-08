@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :articles
+  has_many :articles, through: :favorite_articles
+  has_many :favorite_articles
 
   has_secure_password
   validates_presence_of :password

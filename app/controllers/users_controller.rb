@@ -6,7 +6,8 @@ before_action :set_user, only: [:show, :edit, :update]
   end
 
   def create
-    @user = User.new(params[:id])
+    @user = User.new(user_params)
+
     if !@user.save
       flash[:errors] = []
       flash[:message] = "Please fix the following errors"
@@ -21,11 +22,11 @@ before_action :set_user, only: [:show, :edit, :update]
   end
 
    def show 
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def index 
-    @user = User.find(params[:id])
+    @users = User.find(session[:user_id])
   end
 
   def edit
@@ -52,7 +53,7 @@ before_action :set_user, only: [:show, :edit, :update]
   end
 
   def user_params
-    params.require(:user).permit(:id, :first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:user_id, :first_name, :last_name, :email, :password, :password_confirmation)
   end
 
 end

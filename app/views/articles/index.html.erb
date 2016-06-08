@@ -3,8 +3,30 @@
 <h3>&nbsp;&nbsp;&nbsp;&nbsp;Browse the list below for today's top articles around the world:</h3>
 
 <ul class="list-group">
-<% @articles.each do |article| %>
-<li class="list-group-item"><h5>(<%= article.country_name %>). <%= article.name %>. <%= link_to "Link", article.url, :target => "_blank"  %>.</h5></li>
-<% end %>
+
+  <% @articles.each_with_index do |article, index|%>
+
+    <li class="list-group-item">
+        
+        <h5>
+
+          (<%= link_to article.country_name, country_articles_path(article.country.name) %>).
+
+          <strong id=<%= index %>>
+          <%= article.title %>. <%= link_to "link", article.url, :target => "_blank", :class => "country-articles-links" %> 
+          
+          <%= button_tag "Add to Favorites", class: "add_to_favorites_countries", remote: true %>
+          
+          <%#= #button_tag "Save for Later", class: "save_for_later_countries", remote: true%>
+          
+          </strong>
+
+        </h5>
+    </li>
+  <% end %>
 </ul>
+
+ 
+
+
 

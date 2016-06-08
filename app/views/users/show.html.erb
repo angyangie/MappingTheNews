@@ -1,0 +1,24 @@
+<h1>hello <%= @user.first_name %> <%= @user.last_name %></h1>
+
+<h3>Here are your favorite articles:</h3>
+<h4><div id=favorite_articles>
+  
+<ul>
+<% @user.articles.each do |article| %>
+<li>
+  (<%= link_to article.country.name, country_articles_path(article.country.name) %>).
+  <%= link_to article.title, article.url %>
+</li>
+
+<% end %>
+</ul>
+
+</div></h4>
+
+<!-- <h3>Here are articles to read later:</h3>
+<h4><div id=later_articles>
+
+</div></h4>
+
+ -->
+

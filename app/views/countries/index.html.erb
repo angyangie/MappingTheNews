@@ -1,0 +1,27 @@
+<h1>Woah. Here are all the countries in the world!</h1>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;(Coming soon...the ability to define your own country...we're inclusive of all political viewpoints here at MappingTheNews...)</h3>
+
+<ol class="list-group">
+<% @countries.each do |country| %>
+  <li class="list-group-item">
+
+    <h3><%= link_to country.name, country_articles_path(country.name)%></h3><h5>Today's top 10 articles:
+    <ul class="list-group">
+      
+      <br>
+      <% country.articles.each do |article| %>
+      <li class="list-group-item">
+        <%= article.title %>. <%= link_to "link", article.url, :target => "_blank" %>
+      </li>
+      <% end %>
+      
+    </ul>
+    </h5>
+
+  
+    <input type="button" class="button" value="Add Country to Favorites" id="add_country_to_favorites">
+
+  </li>
+<% end %>
+</ol>
+

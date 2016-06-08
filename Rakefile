@@ -9,6 +9,14 @@ task :seed_articles => :environment do
   ArticleSeeder.new.get_articles
 end
 
+task :country_creator => :environment do 
+  CountryCreator.new.create_countries
+end
+
+task :associate_countries_articles => :environment do 
+  AssociateCountriesArticles.new.associate_countries_articles
+end
+
 # task :clean_db do
 # end
 

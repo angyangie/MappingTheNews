@@ -1,0 +1,2 @@
+class ReadLaterArticlesController < ApplicationController
+end

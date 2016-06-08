@@ -1,5 +1,52 @@
-<h1>Woah. Here are all the countries in the world!</h1>
-<h3>&nbsp;&nbsp;&nbsp;&nbsp;(Coming soon...the ability to define your own country...we're inclusive of all political viewpoints here at MappingTheNews...)</h3>
+<%= render template: 'layouts/_navbar' %>
+
+<!-- HOME -->
+    <section class="module module-header bg-dark bg-dark-50" data-background="<%= asset_path("country_index_bg.jpg") %>">
+
+      <div class="container">
+
+        <!-- MODULE TITLE -->
+        <div class="row">
+
+          <div class="col-sm-8 col-sm-offset-2">
+
+            <h1 class="module-title font-alt align-center">Today's Events Around the world</h1>
+
+            <div class="module-subtitle font-inc align-center">
+              <div class="post-meta font-inc">
+                Scroll, search, explore.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- /MODULE TITLE -->
+
+      </div>
+
+    </section >
+    <!-- /HOME -->
+<!-- BLOG SINGLE -->
+    <section class="module">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-sm-8 col-sm-offset-2">
+
+            <!-- POST -->
+            <div class="post">
+
+              <!-- <div class="post-thumbnail">
+                <a href="blog-single.html"><img src="assets/images/post-1.jpg" alt=""></a>
+              </div> -->
+
+              <div class="post-entry">
+
+<!-- my code!!
+ -->
 
 <ol class="list-group">
 <% @countries.each do |country| %>
@@ -24,4 +71,10 @@
   </li>
 <% end %>
 </ol>
+
+</div>
+
+            </div>
+
+  <%= render template: "layouts/_footer" %>
 

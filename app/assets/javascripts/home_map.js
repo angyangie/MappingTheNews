@@ -5,7 +5,7 @@ var map;
 var initMap = function() {
   mapboxgl.accessToken = 'pk.eyJ1IjoiYW5neWFuZ2llIiwiYSI6ImNpb3pxdzVlNzAyNTR0aG00Y2thcmM2NzcifQ.tZYMnHPi7VJu077p4EyNfA'
 
-        map = new mapboxgl.Map({
+         map = new mapboxgl.Map({
           container: 'map',
           style: 'mapbox://styles/angyangie/ciozr0p53000lbvm60fu356jf'
       });
@@ -29,7 +29,7 @@ var initMap = function() {
 });
 
   map.on('click', function(e){
-
+alert("Click?")
 //country labels
     var country_features = map.queryRenderedFeatures(e.point, {layers: ['countries (1)']});
 

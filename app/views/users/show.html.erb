@@ -1,11 +1,50 @@
-<h1>hello <%= @user.first_name %> <%= @user.last_name %></h1>
+<%= render template: 'layouts/_navbar' %>
 
-<h3>Here are your favorite articles:</h3>
+<!-- HOME -->
+  <section id="home" class="module-hero module-parallax module-fade bg-dark-50" data-background="<%= asset_path("user_show_page.jpg") %>">
+
+    <div class="hs-caption container">
+      <div class="caption-content">
+        <div class="hs-title-size-3 font-alt m-b-20">
+          <%= @user.first_name %>. Your Favorites.
+        </div>
+        <div class="hs-title-size-1 font-inc">
+            The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.<br> - Albert Einstein
+        </div>
+      </div>
+    </div>
+
+  </section >
+  <!-- /HOME -->
+
+      <!-- /HOME -->
+<!-- BLOG SINGLE -->
+    <section class="module">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-sm-8 col-sm-offset-2">
+
+            <!-- POST -->
+            <div class="post">
+
+              <!-- <div class="post-thumbnail">
+                <a href="blog-single.html"><img src="assets/images/post-1.jpg" alt=""></a>
+              </div> -->
+
+              <div class="post-entry">
+
+<!-- my code
+ -->
+
+
 <h4><div id=favorite_articles>
   
-<ul>
+<ul class="list-group">
 <% @user.articles.each do |article| %>
-<li>
+<li class="list-group-item">
   (<%= link_to article.country.name, country_articles_path(article.country.name) %>).
   <%= link_to article.title, article.url %>
 </li>
@@ -21,4 +60,11 @@
 </div></h4>
 
  -->
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+   <%= render template: "layouts/_footer" %>
 

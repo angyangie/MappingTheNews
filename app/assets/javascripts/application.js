@@ -28,6 +28,6 @@
 //= require smoothscroll
 //= require wow.min
 //= require contact
-// require custom
+//= require custom
 //= require_tree .
 

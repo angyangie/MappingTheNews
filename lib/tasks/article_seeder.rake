@@ -29,7 +29,7 @@ def save_articles(articles_json, keyword)
 
   if articles_hash[:result][:docs]
     articles_hash[:result][:docs].each do |article|
-      Article.find_or_create_by(name: article[:source][:enriched][:url][:title], url: article[:source][:enriched][:url][:url], country_name: keyword)
+      Article.find_or_create_by(title: article[:source][:enriched][:url][:title], url: article[:source][:enriched][:url][:url], country_name: keyword)
     end
   end
 end

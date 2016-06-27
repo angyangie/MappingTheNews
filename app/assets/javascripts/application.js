@@ -14,7 +14,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 
-
 //= require jquery.mb.YTPlayer.min
 //= require appear
 //= require jquery.simple-text-rotator.min
@@ -27,6 +26,10 @@
 //= require smoothscroll
 //= require wow.min
 //= require contact
+//= require init
+
 //= require custom
 //= require_tree .
+
+
 

@@ -30,7 +30,6 @@ var initMap = function() {
 });
 
   map.on('click', function(e){
-alert("Click?")
 //country labels
     var country_features = map.queryRenderedFeatures(e.point, {layers: ['countries (1)']});
 
@@ -94,7 +93,6 @@ alert("Click?")
     })
   })
 
-    
 
 }
 $(document).ready(function() {

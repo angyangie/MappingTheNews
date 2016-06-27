@@ -1,10 +1,11 @@
-var buttonSave = function() {
+$(document).ready(function() {
 
   
   $('.add_to_favorites_countries').on("click", function(e){
     e.stopPropagation();
     e.preventDefault();
-     
+
+
       var article_title = $(this.parentElement).clone().children().remove().end().text().trim()
 
       var article_link = $(this).parent().find('a').attr('href')
@@ -33,7 +34,16 @@ var buttonSave = function() {
 
       var article_link = $(this).parent().find('a').attr('href')
 
-    ('#favorite_articles').append("<li><a href='" + article_url + "'>" + article_title + "</a></li>")
+      var data = {}
+      data[article_title] = article_link
+
+      $.ajax({
+        type: "POST",
+        url: "/favorite_articles",
+        dataType: "JSON",
+        data: data
+        })
+
   })
 
   // $('.save_for_later_countries').on("click", function(e){
@@ -70,4 +80,4 @@ var buttonSave = function() {
   //   ('#favorite_countries').append("<li><a href='" + country_url + "'>" + country_name + "</a></li>")
   // })
 
-}
+})

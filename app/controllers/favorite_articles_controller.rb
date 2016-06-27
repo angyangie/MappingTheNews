@@ -1,5 +1,7 @@
 class FavoriteArticlesController < ApplicationController
 
+  before_action :set_user
+
   def new
 
   end

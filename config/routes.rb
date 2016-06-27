@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
  
   resources :favorite_articles
-  resources :read_later_articles
+  # resources :read_later_articles
  
   root 'home#index'
+  get '/home/map', to: 'home#map', as: "home_map"
 
- resources :articles
+  resources :articles
 
  post '/articles/article_save', to: 'articles#article_save'
 

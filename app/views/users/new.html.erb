@@ -1,3 +1,56 @@
+<!-- HOME -->
+    <section class="module module-header bg-dark bg-dark-50" data-background="<%= asset_path("country_index_bg.jpg") %>">
+
+      <div class="container">
+
+        <!-- MODULE TITLE -->
+        <div class="row">
+
+          <div class="col-sm-8 col-sm-offset-2">
+
+            <h1 class="module-title font-alt align-center">SignUp. The world Awaits.
+            <br>
+            <br>
+            <br>
+            <%= link_to "Return to Home", root_path, class: "btn btn-d btn-circle" %><br><br>
+              </h1>
+            <div class="module-subtitle font-inc align-center">
+
+
+              <div class="post-meta font-inc">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- /MODULE TITLE -->
+
+      </div>
+
+    </section >
+    <!-- /HOME -->
+
+
+    <!-- BLOG SINGLE -->
+    <section class="module">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-sm-8 col-sm-offset-2">
+
+            <!-- POST -->
+            <div class="post">
+
+              <!-- <div class="post-thumbnail">
+                <a href="blog-single.html"><img src="assets/images/post-1.jpg" alt=""></a>
+              </div> -->
+
+              <div class="post-entry">
+
+
 <p >Already a member? <strong><%= link_to "Sign In", login_path %></strong></p> 
       <font color="red"><% if flash[:errors] %>
       <h5><%= flash[:message] %>
@@ -29,3 +82,15 @@
 
       <%= f.submit "Sign up", class: "btn btn-primary btn-block" %>
     <% end %>
+
+  </h5>
+  </font>
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+    <%= render template: "layouts/_contact_bottom" %>
+
+  <%= render template: "layouts/_footer" %>

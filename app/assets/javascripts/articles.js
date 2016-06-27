@@ -1,4 +1,4 @@
-$(#add_to_favorites).on("click", function(){
+$("#add_to_favorites").on("click", function(){
   
   
 })

@@ -11,7 +11,27 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+
+//= require jquery.mb.YTPlayer.min
+//= require appear
+//= require jquery.simple-text-rotator.min
+//= require jqBootstrapValidation
+//= require isotope.pkgd.min
+//= require imagesloaded.pkgd
+//= require jquery.flexslider-min
+//= require jquery.magnific-popup.min
+//= require jquery.fitvids
+//= require smoothscroll
+//= require wow.min
+//= require contact
+
+//= require custom
+//= require articles
+//= require buttons_save
+//= require home_map
+//= require init
+
+
 

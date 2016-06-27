@@ -1,31 +1,96 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Mapping The News</title>
-  
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<%= render template: 'layouts/_navbar' %>
 
-  <script src='https://api.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.js'></script>
+ <!-- HOME -->
 
-  <link href='https://api.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.css' rel='stylesheet' />
+  <section id="home" class="module-hero module-parallax module-fade module-full-height bg-dark-30" data-background="<%= asset_path("Home_page_map.jpg") %>">
 
-  <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet'>
+    <div class="hs-caption container">
+      <div class="caption-content">
+        <div class="hs-title-size-4 font-alt m-b-30">
+          Mapping the News 
+        </div>
+        <div class="hs-title-size-1 font-inc">
+          It's a big world out there. <br/> Explore.
+          <br><br><br>
+      <%= link_to "Sign up", signup_path, class: "btn btn-d btn-circle" %><br><br>
+      <%= link_to "Log in", login_path, class: "btn btn-d btn-circle" %><br>
+        </div>
+      </div>
+    </div>
 
-</head>
-<body>
-
-<div id="map" class="mapboxgl-map">
-  <div class="mapboxgl-canvas-container mapboxgl-interactive">
-    <canvas class="mapboxgl-canvas" tabindex="0" width="748" height="400" style="position: absolute; width: 748px; height: 400px;">
-      
-    </canvas>
-  </div>
-</div>
+  </section >
+  <!-- /HOME --> 
 
 
-</body>
-</html>
+    <!-- TESTIMONIAL -->
+    <section class="module-small">
 
+      <div class="container">
 
-  
+        <div class="row">
+
+          <!-- MODULE TITLE -->
+          <div class="col-sm-6">
+            <h2 class="module-title font-alt">Mapping the News</h2>
+          </div>
+          <!-- /MODULE TITLE -->
+
+          <!-- BLOCKQUOTE -->
+          <div class="col-sm-6">
+            <blockquote class="font-serif align-right">
+              <p>Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.</p>
+              <p class="font-inc font-uppercase">- Albert Einstein </p>
+              
+            </blockquote>
+          </div>
+          <!-- /BLOCKQUOTE -->
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- /TESTIMONIAL -->
+
+    <!-- ABOUT -->
+    <section class="module p-t-0 p-b-0" data-background="<%= asset_path("home_newspapers.jpg") %>" >
+
+      <div class="container-fluid">
+
+        <div class="row relative">
+
+          <div class="col-sm-12 col-md-6 col-md-offset-6 col-bg">
+
+            <h2 class="module-title font-alt">About</h2>
+
+            <div class="module-subtitle font-inc">
+              Mapping the News helps its readers stay informed about world events. 
+            </div>
+
+            <p>Perhaps the Irish orator, philosopher and politician, Edmund Burke said it best with the following quotation: All that is necessary for the triumph of evil is that good men do nothing. This resonates with social advocates the world over. And there is indeed a great truth and responsibility inherent in these words.</p>
+
+            <p>On a more practical level, the goings-on in remote places around the world do indeed have a direct bearing on economic relationships, political affiliations and global power blocs. The recent conflagration in the Ukraine set in motion a sharp divide between the US and its allies on one hand, and the Russians on the other. If the moral aspect of international crises does not resonate with everyday citizens, the economic component most certainly does.</p>
+
+            <p>Let us help you stay informed </p>
+
+            <!-- <ul class="social-list">
+              <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+              <li><a href="#"><span></span><i class="icon-twitter"></i>
+              </a></li>
+              <li><a href="#"><span>
+                <i class="fa fa-instagram"></i>
+              </span></a></li>
+            </ul> -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- /ABOUT -->
+
+  <%= render template: "layouts/_contact_bottom" %>
+
+  <%= render template: "layouts/_footer" %>

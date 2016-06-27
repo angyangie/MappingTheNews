@@ -1,4 +1,5 @@
-$(document).ready(function() {
+var buttonSave = function() {
+
   
   $('.add_to_favorites_countries').on("click", function(e){
     e.stopPropagation();
@@ -69,4 +70,4 @@ $(document).ready(function() {
   //   ('#favorite_countries').append("<li><a href='" + country_url + "'>" + country_name + "</a></li>")
   // })
 
-})
+}

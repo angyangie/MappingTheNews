@@ -36,11 +36,17 @@
             </li>
                   
             <li>
+              <% if @user %>
               <%= link_to "My Favorites", user_path(@user)%>
+              <% end %>
             </li>
     
             <li>
+            <% if @user %>
               <%= link_to "LogOut", logout_path%>
+            <% else %>
+              <%= link_to "LogIn", login_path%>
+            <% end %>
             </li>
     
           </ul>

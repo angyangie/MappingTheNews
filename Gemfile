@@ -53,7 +53,9 @@ group :development do
   #Styling gems:
 
   gem "font-awesome-rails"
-  
+
+
+
 end
 gem 'bootstrap-sass', '~> 3.3.6'
 

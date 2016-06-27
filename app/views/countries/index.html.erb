@@ -58,15 +58,13 @@
       <br>
       <% country.articles.each do |article| %>
       <li class="list-group-item">
-        <%= article.title %>. <%= link_to "link", article.url, :target => "_blank" %>
+        <%= article.title %>. <%= link_to "link", article.url, :target => "_blank" %><%= button_tag "Add to Favorites", class: "add_to_favorites_articles", remote: true %>
       </li>
       <% end %>
       
     </ul>
     </h5>
 
-  
-    <input type="button" class="button" value="Add Country to Favorites" id="add_country_to_favorites">
 
   </li>
 <% end %>

@@ -1,4 +1,3 @@
-
 var map;
 
 var initMap = function() {
@@ -95,7 +94,4 @@ var initMap = function() {
 
 
 }
-$(document).ready(function() {
-  initMap();
-})
 

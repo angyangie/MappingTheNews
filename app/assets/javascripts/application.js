@@ -26,10 +26,12 @@
 //= require smoothscroll
 //= require wow.min
 //= require contact
-//= require init
 
 //= require custom
-//= require_tree .
+//= require articles
+//= require buttons_save
+//= require home_map
+//= require init
 
 
 

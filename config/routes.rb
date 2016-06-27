@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/home/map', to: 'home#map', as: "home_map"
 
- resources :articles
+  resources :articles
 
  post '/articles/article_save', to: 'articles#article_save'
 

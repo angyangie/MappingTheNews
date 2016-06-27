@@ -1,13 +1,14 @@
 
 var map;
 
-//Load map 
 var initMap = function() {
   mapboxgl.accessToken = 'pk.eyJ1IjoiYW5neWFuZ2llIiwiYSI6ImNpb3pxdzVlNzAyNTR0aG00Y2thcmM2NzcifQ.tZYMnHPi7VJu077p4EyNfA'
 
-         map = new mapboxgl.Map({
+        map = new mapboxgl.Map({
           container: 'map',
-          style: 'mapbox://styles/angyangie/ciozr0p53000lbvm60fu356jf'
+          style: 'mapbox://styles/angyangie/ciozr0p53000lbvm60fu356jf',
+          center: [0, 40], // starting position
+          zoom: 2.2 // starting zoom
       });
 
   //load state layer

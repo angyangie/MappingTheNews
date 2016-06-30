@@ -88,7 +88,7 @@ var initMap = function() {
 
       response.forEach(function(article){
         list_of_articles.push(
-          "<li><a href='" + article.url + "'>" + article.title + "</a></li>"
+          "<li><a href='" + article.url + " target="_blank"'>" + article.title + "</a></li>"
           )
       })
 

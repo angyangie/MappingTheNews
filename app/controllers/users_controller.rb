@@ -2,6 +2,7 @@ class UsersController < ApplicationController
  before_action :set_user, :except => [:index, :new, :create]
 
   def new 
+    @user = User.new
   end
 
   def create

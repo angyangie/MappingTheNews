@@ -1,3 +1,5 @@
+require 'pry'
+
 class CountriesController < ApplicationController
 
   before_action :set_user
@@ -8,8 +10,10 @@ class CountriesController < ApplicationController
   end
 
   def show
-    params_name = params[:name].capitalize
-    @country = Country.find_by(name: params_name)
+    params_name = params[:slug_name]
+
+    @country = Country.find_by(slug_name: params_name)
+
     respond_to do |format|
       format.html
       format.js {render json: @country.articles}

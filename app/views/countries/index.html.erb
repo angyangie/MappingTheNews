@@ -52,7 +52,7 @@
 <% @countries.each do |country| %>
   <li class="list-group-item">
 
-    <h3><%= link_to country.name, country_articles_path(country.name)%></h3><h5>Today's top 10 articles:
+    <h3><%= link_to country.name, country_articles_path(country.slug_name)%></h3><h5>Today's top 10 articles:
     <ul class="list-group">
       
       <br>

@@ -11,7 +11,7 @@
         
         <h5>
 
-          (<%= link_to article.country_name, country_articles_path(article.country.name) %>).
+          (<%= link_to article.country_name, country_articles_path(article.country.slug_name) %>).
 
           <strong id=<%= index %>>
           <%= article.title %>. <%= link_to "link", article.url, :target => "_blank", :class => "country-articles-links" %> 

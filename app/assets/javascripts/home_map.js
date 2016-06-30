@@ -38,7 +38,22 @@ var initMap = function() {
       countries.push(country.properties.name)
     })
 
+
+    var slug_name = countries[0].replace(/\s/g,'_')
+
+    // debugger 
+
+    // var country_ids = []
+
+    // var ids = countries.forEach(function(country){
+    //   var country_obj = Country.find_by(name: country)
+    //   console.log(country_obj)
+    // })
+
+    //       country_ids.push(country_obj.id)
+
     map.getCanvas().style.cursor = (country_features.length) ? 'pointer' : '';
+
 
     console.log(countries[0])
 
@@ -63,13 +78,13 @@ var initMap = function() {
 
   $.ajax({
     type: "GET",
-    url: "/countries/" + countries[0],
+    url: "/countries/" + slug_name,
     dataType: "JSON"
     }).done(function(response){
 
       var list_of_articles = []
 
-      list_of_articles.push("<strong><a href='http://localhost:3000/countries/" + countries[0] + "'>" + countries[0] + "</a><strong><ul>")
+      list_of_articles.push("<strong><a href='http://localhost:3000/countries/" + slug_name + "'>" + countries[0] + "</a><strong><ul>")
 
       response.forEach(function(article){
         list_of_articles.push(

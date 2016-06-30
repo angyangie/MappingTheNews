@@ -28,7 +28,6 @@
 //= require contact
 
 //= require custom
-//= require articles
 //= require buttons_save
 //= require home_map
 //= require init

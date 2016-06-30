@@ -17,6 +17,10 @@ task :associate_countries_articles => :environment do
   AssociateCountriesArticles.new.associate_countries_articles
 end
 
+task :country_destroyer => :environment do 
+  CountryDestroyer.new.destroy_countries
+end
+
 # task :clean_db do
 # end
 

@@ -10,10 +10,8 @@ Rails.application.routes.draw do
 
  post '/articles/article_save', to: 'articles#article_save'
 
-
- resources :countries, except: :show
-
- get '/countries/:name', to: "countries#show", as: "country_articles"
+ get '/countries/:slug_name', to: "countries#show", as: "country_articles"
+ get '/countries', to: "countries#index"
 
  # get '/countries/json', to: "map#countries"
 

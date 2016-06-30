@@ -45,7 +45,7 @@
 <ul class="list-group">
 <% @user.articles.each do |article| %>
 <li class="list-group-item">
-  (<%= link_to article.country.name, country_articles_path(article.country.name) %>).
+  (<%= link_to article.country.name, country_articles_path(article.country.slug_name) %>).
   <%= link_to article.title, article.url %>
 </li>
 

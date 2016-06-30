@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
 
   protect_from_forgery with: :exception
-  skip_before_action :require_login
+  
+  before_action :set_user, only: :map
   
   def index
   end

@@ -84,7 +84,7 @@ var initMap = function() {
 
       var list_of_articles = []
 
-      list_of_articles.push("<strong><a href='http://localhost:3000/countries/" + slug_name + "'>" + countries[0] + "</a><strong><ul>")
+      list_of_articles.push("<strong><a href='http://mapping-the-news.herokuapp.com/countries/" + slug_name + "'>" + countries[0] + "</a><strong><ul>")
 
       response.forEach(function(article){
         list_of_articles.push(

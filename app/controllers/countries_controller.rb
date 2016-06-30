@@ -14,6 +14,7 @@ class CountriesController < ApplicationController
 
     @country = Country.find_by(slug_name: params_name)
 
+    
     respond_to do |format|
       format.html
       format.js {render json: @country.articles}

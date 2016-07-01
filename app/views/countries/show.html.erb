@@ -54,9 +54,7 @@
         <% @country.articles.each_with_index do |article, index| %>
         <li class="list-group-item" id=<%= index %>>
         
-          <%= article.title %>. <%= link_to "link", article.url, :target => "_blank", :class => "country-articles-links" %> 
-          
-          <%= button_tag "Add to Favorites", class: "add_to_favorites_countries btn btn-secondary btn-sm"%>
+          <%= link_to article.title, article.url, :target => "_blank", :class => "country-articles-links" %>. <br><%= button_tag "Add to Favorites", class: "add_to_favorites_articles btn btn-default", remote: true %>
           <%#= #button_tag "Save for Later", class: "save_for_later_countries"%>
 
         <!--  <input type="button" class="button" value="Add to Favorites" id="add_to_favorites_countries">

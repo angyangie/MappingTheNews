@@ -1,8 +1,7 @@
-<%= render template: 'layouts/_navbar' %>
-
+  <%= render template: 'layouts/_navbar' %>
  <!-- HOME -->
 
-  <section id="home" class="module-hero module-parallax module-fade module-full-height bg-dark-30" data-background="<%= asset_path("Home_page_map.jpg") %>">
+  <section id="home" class="module-hero module-parallax module-fade module-full-height bg-dark-30" data-background="<%= asset_path("Binoculars.jpg") %>">
 
     <div class="hs-caption container">
       <div class="caption-content">
@@ -12,8 +11,12 @@
         <div class="hs-title-size-1 font-inc">
           It's a big world out there. <br/> Explore.
           <br><br><br>
-      <%= link_to "Sign up", signup_path, class: "btn btn-d btn-circle" %><br><br>
-      <%= link_to "Log in", login_path, class: "btn btn-d btn-circle" %><br>
+      
+       <% if @user %>
+        <%= link_to "Log out", logout_path, class: "btn btn-d btn-circle" %><br>
+      <% else %>
+        <%= link_to "Log in", login_path, class: "btn btn-d btn-circle" %><br>
+      <% end %>
         </div>
       </div>
     </div>

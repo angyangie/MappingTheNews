@@ -1,67 +1,34 @@
-<%= render template: 'layouts/_nav_bar_signup' %>
-
 
 <!-- HOME -->
-    <section class="module module-header bg-dark bg-dark-50" data-background="<%= asset_path("country_index_bg.jpg") %>">
+<section class="module module-header bg-dark bg-dark-50" data-background="<%= asset_path("Binoculars.jpg") %>">
 
-      <div class="container">
+  <div class="container">
 
-        <!-- MODULE TITLE -->
-        <div class="row">
+    <!-- MODULE TITLE -->
+    <div class="row">
 
-          <div class="col-sm-8 col-sm-offset-2">
+      <div class="col-sm-8 col-sm-offset-2">
 
-            <h1 class="module-title font-alt align-center">SignUp. The world Awaits.
-            <br>
-            <br>
-            <br>
-            <%= link_to "Return to Home", root_path, class: "btn btn-d btn-circle" %><br><br>
-              </h1>
-            <div class="module-subtitle font-inc align-center">
+        <h1 class="module-title font-alt align-center">Welcome to Mapping the News</h1><h3 class="align-center">The World Awaits.</h3>
+        <h3 class="module-subtitle font-inc align-center">
 
+        </h3>
 
-              <div class="post-meta font-inc">
-              </div>
-            </div>
+        <div class="panel-body">
+         <div class="error_box">
 
-          </div>
-
-        </div>
-        <!-- /MODULE TITLE -->
-
-      </div>
-
-    </section >
-    <!-- /HOME -->
-
-
-    <!-- BLOG SINGLE -->
-    <section class="module">
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-sm-8 col-sm-offset-2">
-
-            <!-- POST -->
-            <div class="post">
-
-              <!-- <div class="post-thumbnail">
-                <a href="blog-single.html"><img src="assets/images/post-1.jpg" alt=""></a>
-              </div> -->
-
-              <div class="post-entry">
-
-
-<p >Already a member? <strong><%= link_to "Sign In", login_path %></strong></p> 
-      <font color="red"><% if flash[:errors] %>
-      <h5><%= flash[:message] %>
+         <font color="#e55b5b" class="align-center" font-style="italic"><% if flash[:errors] %>
+      <h5><%= flash[:message] %>:</h5>
         <% flash[:errors].each do |error| %>
         <li><%= error %></li>
         <% end %>
+        <br>
     <% end %>
-      <br>
+    </font>
+    </div>
+
+          <h4 class="align-center">Already a member? <strong><%= link_to "Sign In", login_path %></strong></h4> 
+
 
       <%= form_for @user, url: '/signup' do |f| %>
 
@@ -86,14 +53,14 @@
       <%= f.submit "Sign up", class: "btn btn-primary btn-block" %>
     <% end %>
 
-  </h5>
-  </font>
-  </div>
-  </div>
-  </div>
+
+      </div>
+    </div>
   </div>
 
+</div>
+<%= render template: "layouts/_contact_bottom" %>
 
-    <%= render template: "layouts/_contact_bottom" %>
+</section >
 
-  <%= render template: "layouts/_footer" %>
+

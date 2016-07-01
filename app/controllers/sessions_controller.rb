@@ -8,7 +8,7 @@ before_action :set_user, only: [:show, :edit, :update]
    @user = User.find_by(email: params[:user][:email])
      if @user && @user.authenticate(params[:user][:password])
        session[:user_id] = @user.id
-       redirect_to user_path(@user)
+       redirect_to home_path(@user)
      else
       flash[:message] = "You have entered the wrong email or password. Please try again."
       redirect_to login_path

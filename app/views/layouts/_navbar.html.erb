@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
           </button>
 
-          <a><%= link_to "MTN", root_path, class: "navbar-brand" %></a>
+          <a><%= link_to "MTN", home_path, class: "navbar-brand" %></a>
 
         </div>
     
@@ -26,7 +26,7 @@
           <ul class="nav navbar-nav navbar-right">
     
             <li>
-              <%= link_to "Home", root_path %>
+              <%= link_to "Home", home_path %>
             </li>
     
             <li>
@@ -39,7 +39,7 @@
     
             <li>
             <% if @user %>
-              <%= link_to "Today's Events", countries_path %>
+              <%= link_to "Today's Events", today_path %>
             <% else %>
               <%= link_to "Today's Events", login_path%>
             <% end %>

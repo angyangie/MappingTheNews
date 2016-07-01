@@ -29,6 +29,7 @@ var initMap = function() {
 });
 
   map.on('click', function(e){
+
 //country labels
     var country_features = map.queryRenderedFeatures(e.point, {layers: ['countries (1)']});
 
@@ -37,6 +38,8 @@ var initMap = function() {
     var country_labels = country_features.forEach(function(country){
       countries.push(country.properties.name)
     })
+
+    console.log(countries[0])
 
 
     var slug_name = countries[0].replace(/\s/g,'_')

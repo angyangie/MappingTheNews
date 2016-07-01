@@ -1,103 +1,57 @@
-<%= render template: 'layouts/_navbar' %>
 
 <!-- HOME -->
-    <section class="module module-header bg-dark bg-dark-50" data-background="<%= asset_path("country_index_bg.jpg") %>">
+<section class="module module-header bg-dark bg-dark-50" data-background="<%= asset_path("Binoculars.jpg") %>">
 
-      <div class="container">
+  <div class="container">
 
-        <!-- MODULE TITLE -->
-        <div class="row">
+    <!-- MODULE TITLE -->
+    <div class="row">
 
-          <div class="col-sm-8 col-sm-offset-2">
+      <div class="col-sm-8 col-sm-offset-2">
 
-            <h1 class="module-title font-alt align-center">Welcome Back to Mapping the News.<br><br>Please LogIn</h1>
-            <h3 class="module-subtitle font-inc align-center">Enjoy your Passport to the World.
-            <br>
-            <br>
-            <br>
+        <h1 class="module-title font-alt align-center">Welcome to Mapping the News</h1><h3 class="align-center">Please Login Below:</h3>
+        <h3 class="module-subtitle font-inc align-center">
 
-            <%= link_to "Return to Home", root_path, class: "btn btn-d btn-circle" %><br><br>
+        </h3>
 
-            </h3>
-
-            <div class="module-subtitle font-inc align-center">
-              <div class="post-meta font-inc">
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-        <!-- /MODULE TITLE -->
-
-      </div>
-
-    </section >
-    <!-- /HOME -->
-
-
-    <!-- BLOG SINGLE -->
-    <section class="module">
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-sm-8 col-sm-offset-2">
-
-            <!-- POST -->
-            <div class="post">
-
-              <!-- <div class="post-thumbnail">
-                <a href="blog-single.html"><img src="assets/images/post-1.jpg" alt=""></a>
-              </div> -->
-
-              <div class="post-entry">
-
-<!-- My Code
- -->
-
-  <div class="panel-body">
-     <p> Please login:</p>
+        <div class="panel-body">
          <div class="error_box">
 
-          <font color="red">
-            <h5>
-              <% if flash[:message] %>
-              <%= flash[:message] %>
-              <% end %>
-            </h5>
-          </font>
+         <font color="#e55b5b" class="align-center" font-style="italic"><% if flash[:message] %>
+            <h4><%= flash[:message] %></h4>
+        <br>
+    <% end %>
+    </font>
+    </div>
+
+        <%= form_for :user, {:url => '/login', :class => 'form-horizontal'} do |f| %>
+        <div class="form-group">
+          <div class="col-md-12">
+            <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %><br>
+
+          </div>
         </div>
+        <div class="form-group">
+         <div class="col-md-12">
+          <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+          <a href="javascript:void(0)" class="help-block align-center">Forgot Your Password?</a><br>
+        </div>
+      </div>
+      <div class="form-group">
+       <div class="col-md-12">
+        <%= f.submit "Log in", class: "btn btn-primary btn-block" %>
 
-       <%= form_for :user, {:url => '/login', :class => 'form-horizontal'} do |f| %>
-          <div class="form-group">
-              <div class="col-md-12">
-                Email:<%= f.email_field :email, class: 'form-control', placeholder: 'Email' %><br>
-                  
-              </div>
-          </div>
-          <div class="form-group">
-             <div class="col-md-12">
-              Password:<%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
-                  <a href="javascript:void(0)" class="help-block">Forgot Your Password?</a><br>
-              </div>
-          </div>
-          <div class="form-group">
-             <div class="col-md-12">
-                <%= f.submit "Log in", class: "btn btn-primary btn-block" %>
+        <br><center>  <%= link_to "New user? Sign up now!", signup_path, class: "btn btn-secondary btn-block" %> </center>
 
-                  <br><center> New user? <%= link_to "Sign up now!", signup_path, class: "btn btn-default btn-block" %> </center>
-
-                  <% end %>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 
+</div>
+
+</div>
+</div>
 <%= render template: "layouts/_contact_bottom" %>
 
-  <%= render template: "layouts/_footer" %>
+</section >

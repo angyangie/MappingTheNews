@@ -12,10 +12,10 @@ class FavoriteArticlesController < ApplicationController
 
     user = User.find(user_id)
     @favorite_article = FavoriteArticle.find_or_create_by(user_id: user_id, article_id: article.id)
-    # if @favorite_article.save
-    #   flash[:alert]=("Favorite article saved!")
-    #   redirect_to user_path(@user)
-    # end
+    
+    if @favorite_article.save
+      flash[:alert]=("Favorite article saved!")
+    end
 
   end
 

@@ -1,46 +1,63 @@
 <%= render template: 'layouts/_navbar' %>
 
 <!-- HOME -->
-    <section class="module module-header bg-dark bg-dark-50" data-background="<%= asset_path("globe-image.jpg") %>">
+<section class="module module-header bg-dark bg-dark-50" data-background="<%= asset_path("globe-image.jpg") %>">
 
-      <div class="container">
+  <div class="container">
 
-        <!-- MODULE TITLE -->
-        <div class="row">
+    <!-- MODULE TITLE -->
+    <div class="row">
 
-          <div class="col-sm-8 col-sm-offset-2">
+      <div class="col-sm-8 col-sm-offset-2">
+        <% if @user.articles.length > 0 %>
 
-            <h1 class="module-title font-alt align-center"><br><br><%= @user.first_name %>. Your Favorites.</h1>
-            <h3 class="module-subtitle font-inc align-center"> The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.<br> - Albert Einstein
-            
-            </h3>
+        <h1 class="module-title font-alt align-center"><br><br><%= @user.first_name %>. Your Favorites.</h1>
+        <h3 class="module-subtitle font-inc align-center"> The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.<br> - Albert Einstein
 
-            <div class="module-subtitle font-inc align-center">
-              <div class="post-meta font-inc">
-              </div>
-            </div>
+        </h3>
 
+        <div class="module-subtitle font-inc align-center">
+          <div class="post-meta font-inc">
           </div>
-
         </div>
-        <!-- /MODULE TITLE -->
+
+        <% else %>
+
+        <h1 class="module-title font-alt align-center"><br><br>Dear <%= @user.first_name %>, <br>You have no saved articles.</h1><h3 class="align-center">Add some!</h3><br><br>
+        <h3 class="module-subtitle font-inc align-center"> <%= link_to "Browse List of Articles", today_path, class: "btn btn-d btn-circle" %><br> <br>
+        <%= link_to "Browse Article Map", home_map_path, class: "btn btn-d btn-circle" %>
+
+        </h3>
+
+        <div class="module-subtitle font-inc align-center">
+          <div class="post-meta font-inc">
+          </div>
+        </div>
+
+        <% end %>
+
 
       </div>
 
-    </section >
+    </div>
+    <!-- /MODULE TITLE -->
 
+  </div>
 
+</section >
+
+<% if @user.articles.length > 0 %>
 <!-- BLOG SINGLE -->
-    <section class="module">
+<section class="module">
 
-      <div class="container">
+  <div class="container">
 
-        <div class="row">
+    <div class="row">
 
-          <div class="col-sm-8 col-sm-offset-2">
+      <div class="col-sm-8 col-sm-offset-2">
 
-            <!-- POST -->
-            <div class="post">
+        <!-- POST -->
+        <div class="post">
 
               <!-- <div class="post-thumbnail">
                 <a href="blog-single.html"><img src="assets/images/post-1.jpg" alt=""></a>
@@ -48,35 +65,30 @@
 
               <div class="post-entry">
 
-<!-- my code
- -->
 
-
-<h4><div id=favorite_articles>
-  
-<ul class="list-group">
-<% @user.articles.each do |article| %>
-<li class="list-group-item">
-  (<%= link_to article.country.name, country_articles_path(article.country.slug_name) %>).
-  <%= link_to article.title, article.url %>
-</li>
-
-<% end %>
-</ul>
-
-</div></h4>
+                <h4><div id=favorite_articles>
+                  <ul class="list-group">
+                    <% @user.articles.each do |article| %>
+                    <li class="list-group-item">
+                      (<%= link_to article.country.name, country_articles_path(article.country.slug_name) %>).
+                      <%= link_to article.title, article.url %>
+                    </li>
+                    <% end %>
+                  </ul>
+                </div></h4>
 
 <!-- <h3>Here are articles to read later:</h3>
 <h4><div id=later_articles>
 
 </div></h4>
 
- -->
- </div>
- </div>
- </div>
- </div>
- </div>
+-->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<% end %>
 
-   <%= render template: "layouts/_footer" %>
 

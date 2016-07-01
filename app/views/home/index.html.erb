@@ -10,13 +10,13 @@
         </div>
         <div class="hs-title-size-1 font-inc">
           It's a big world out there. <br/> Explore.
-          <br><br><br>
-      
-       <% if @user %>
-        <%= link_to "Log out", logout_path, class: "btn btn-d btn-circle" %><br>
-      <% else %>
-        <%= link_to "Log in", login_path, class: "btn btn-d btn-circle" %><br>
-      <% end %>
+          <br><br>
+
+          <h3 class="module-subtitle font-inc align-center"> <%= link_to "Browse List of Articles", today_path, class: "btn btn-d btn-circle" %><br> <br>
+        <%= link_to "Browse Article Map", home_map_path, class: "btn btn-d btn-circle" %>
+
+        </h3>
+
         </div>
       </div>
     </div>
